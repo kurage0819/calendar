@@ -20,7 +20,7 @@ def main(argv)
 	if day.to_i>daysInMonth || daysInWeek>daysInMonth
 		print("-1\n")
 
-	elsif leap != 0 && month.to_i > (daysInyear/daysInMonth)	|| stock ==0	
+	elsif leap != 0 && month.to_i > (daysInyear/daysInMonth)　|| stock ==　0	
 		print("-1\n")
 	
 	else 
