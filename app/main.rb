@@ -10,16 +10,7 @@ def main(argv)
 
 	leap = stock * year.to_i
 
-	leapct=0
-	loop do
-		if leap>daysInMonth
-			leapct+=1
-			leap-=daysInMonth
-		end
-		if leap<daysInMonth
-			break
-		end
-	end
+
 
 	if month.to_i>daysInMonth || daysInWeek>daysInMonth
 		print"-1\n"
