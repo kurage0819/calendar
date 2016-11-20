@@ -17,10 +17,10 @@ def main(argv)
 	leap = (stock*year.to_i)%daysInMonth
 	leapc = (stock*year.to_i)/daysInMonth
 
-	if day.to_i>daysInMonth || daysInWeek>daysInMonth　|| stock ==　0
+	if day.to_i>daysInMonth || daysInWeek>daysInMonth
 		print("-1\n")
 
-	elsif leap != 0 && month.to_i > (daysInyear/daysInMonth)
+	elsif leap != 0 && month.to_i > (daysInyear/daysInMonth)　||　stock　==　0
 		print("-1\n")
 	
 	else 
