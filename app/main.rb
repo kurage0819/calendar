@@ -15,7 +15,7 @@ def main(argv)
 	if month.to_i>daysInMonth || daysInWeek>daysInMonth
 		print"-1\n"
 	else
-		week = ((daysInyear*year.to_i)+(daysInMonth*month.to_i)+(leapct*daysInMonth)+day.to_i)%daysInMonth
+		week = ((daysInyear*year.to_i)+(daysInMonth*month.to_i)+day.to_i)%daysInMonth
 
 		if week == 0
 			week+=daysInWeek
