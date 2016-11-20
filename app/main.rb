@@ -9,7 +9,7 @@ def main(argv)
 	stock = daysInyear%daysInMonth
 
 	leap = daysInMonth/stock
-
+	
 	if day.to_i>daysInMonth || daysInWeek>daysInMonth
 		print("-1\n")
 
@@ -22,7 +22,6 @@ def main(argv)
 		if week == 0
 			week+=daysInWeek
 		end
-		puts week
 
 
 		print (week+64).chr,"\n"
