@@ -23,7 +23,7 @@ def main(argv)
 		print("-1\n")
 	
 	else 
-		week = (((daysInyear*(year.to_i-1))+(daysInMonth*((month.to_i+leap)-1))+day.to_i) + 1 )% daysInWeek
+		week = (((daysInyear*(year.to_i-1))+(daysInMonth*((month.to_i+leap)-1))+day.to_i))% daysInWeek
 		if week == 0
 			week+=daysInWeek
 		end
