@@ -31,16 +31,16 @@ def main(argv)
 		print("-1\n")
 	
 	elsif leapday>=1 && month.to_i<=yearm
-		week = (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+day.to_i)%daysInWeek
+		week = (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+day.to_i)
+
+		if week == 0
+			week+=daysInWeek
+		end
+
+
+		print ((week%daysInWeek)+64).chr,"\n"
 
 	end
-
-	if week == 0
-		week+=daysInWeek
-	end
-
-
-	print (week+64).chr,"\n"
 
 
 end
