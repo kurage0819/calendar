@@ -21,6 +21,7 @@ def main(argv)
 	else 
 		week = (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+(leapday*daysInMonth)+day.to_i)%daysInWeek
 
+
 		if week == 0
 			week+=daysInWeek
 		end
