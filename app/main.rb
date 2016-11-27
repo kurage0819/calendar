@@ -33,8 +33,6 @@ def main(argv)
 	elsif leapday>=1 && month.to_i<=yearm
 		week = (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+day.to_i)%daysInWeek
 
-	else
-		week = ((year.to_i * yearm -daysInMonth)+(daysInMonth*(leapday-1))+day.to_i)%daysInWeek
 	end
 
 	if week == 0
