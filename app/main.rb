@@ -6,34 +6,20 @@ def main(argv)
 
 	year,month,day = argv[3].split("-")
 
-	stock = daysInyear%daysInMonth
-	yearm = daysInyear/daysInMonth
+	stock = daysInyear%daysInMonth	#余り日数
+	yearm = daysInyear/daysInMonth	#一年の月数
 
-#	leap = daysInMonth/stock
-#
-#	if stock*leap<daysInMonth
-#		leap+=1
-#	end
-
-
-#puts (((year.to_i-1)*daysInyear)+((month.to_i-1)*daysInMonth)+day.to_i)%daysInWeek
-#puts (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+day.to_i)%daysInWeek
-
-	leap=stock*year.to_i
-	leapday=leap/daysInMonth
-
-
+	leap=stock*year.to_i 	#余り日数の合計
+	leapday=leap/daysInMonth	#余り日数が何月分か
 
 	if day.to_i>daysInMonth || daysInWeek>daysInMonth
 		print("-1\n")
 
-	elsif leapday == 0 && month.to_i > (daysInyear/daysInMonth)
+	elsif leapday == 0 && month.to_i > yearm
 		print("-1\n")
 	
 	else 
-		week = (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+day.to_i)%daysInWeek
-		#puts (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+day.to_i)
-		#puts leapday
+		week = (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+(leapday*daysInMonth)+day.to_i)%daysInWeek
 
 		if week == 0
 			week+=daysInWeek
