@@ -30,15 +30,15 @@ def main(argv)
 	elsif leapday == 0 && month.to_i > (daysInyear/daysInMonth)
 		print("-1\n")
 	
-	elsif leapday>=1 && month.to_i<=yearm
-		week = (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+day.to_i)
+	else 
+		week = (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+day.to_i)%daysInWeek
 
 		if week == 0
 			week+=daysInWeek
 		end
 
 
-		print ((week%daysInWeek)+64).chr,"\n"
+		print (week+64).chr,"\n"
 
 	end
 
