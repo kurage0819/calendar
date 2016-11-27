@@ -7,6 +7,7 @@ def main(argv)
 	year,month,day = argv[3].split("-")
 
 	stock = daysInyear%daysInMonth
+	yearm = daysInyear/daysInMonth
 
 #	leap = daysInMonth/stock
 #
@@ -15,20 +16,23 @@ def main(argv)
 #	end
 
 
-	leap = (stock*year.to_i)%daysInMonth
-	leapc = (stock*year.to_i)/daysInMonth
+#puts (((year.to_i-1)*daysInyear)+((month.to_i-1)*daysInMonth)+day.to_i)%daysInWeek
+#puts (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+day.to_i)%daysInWeek
 
-	if leapc>0 && month.to_i > (daysInyear/daysInMonth)
-		flag=1
-	end
+	leap=stock*year.to_i
+	leapday=leap/daysInMonth
+
+
+
 	if day.to_i>daysInMonth || daysInWeek>daysInMonth
 		print("-1\n")
 
-	elsif leap != 0 && month.to_i > (daysInyear/daysInMonth)
+	elsif leapday == 0 && month.to_i > (daysInyear/daysInMonth)
 		print("-1\n")
 	
 	else 
-		week = (((year.to_i-1)*daysInyear)+((month.to_i-1)*daysInMonth)+day.to_i) % daysInWeek
+		week = (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+day.to_i)%daysInWeek
+
 		if week == 0
 			week+=daysInWeek
 		end
