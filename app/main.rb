@@ -31,12 +31,13 @@ def main(argv)
 		print("-1\n")
 	
 	else 
-		week = (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+day.to_i)%daysInWeek
+		week = (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+(daysInMonth*(leapday-1))+day.to_i)%daysInWeek
+		#puts (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+day.to_i)
+		#puts leapday
 
 		if week == 0
 			week+=daysInWeek
 		end
-
 
 		print (week+64).chr,"\n"
 
