@@ -15,8 +15,8 @@ def main(argv)
 	if day.to_i>daysInMonth || daysInWeek>daysInMonth
 		print("-1\n")
 
-	#elsif leapday > 0 && (year.to_i % leapday != 0) && month.to_i > yearm 
-	elsif year.to_i % (daysInMonth/stock) != 0 && month.to_i > yearm 
+	elsif leapday > 0 && (year.to_i % leapday != 0) && month.to_i > yearm 
+	#elsif year.to_i % (daysInMonth/stock) != 0 && month.to_i > yearm 
 		print("-1\n")
 	elsif month.to_i > yearm 
 		print("-1\n")
