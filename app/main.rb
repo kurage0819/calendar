@@ -18,9 +18,7 @@ def main(argv)
 	if week == 0
 		week+=daysInWeek
 	end
-	
 
-	puts sumday
 	if day.to_i>daysInMonth || daysInWeek>daysInMonth
 		print("-1\n")
 	elsif (sumday+daysInMonth)%daysInyear != 0 && month.to_i > yearm
