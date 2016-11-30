@@ -12,23 +12,20 @@ def main(argv)
 	leap=stock*(year.to_i-1)	#余り日数の合計
 	leapday=leap/daysInMonth	#余り日数が何月分か
 
+	sumday = ((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+(leapday*daysInMonth) 
+	week = (sumday+day.to_i)%daysInWeek
+
+	if week == 0
+		week+=daysInWeek
+	end
+	
+
+	puts sumday
 	if day.to_i>daysInMonth || daysInWeek>daysInMonth
 		print("-1\n")
-
-	elsif leapday > 0 && (year.to_i % leapday != 0) && month.to_i > yearm 
-	#elsif year.to_i % (daysInMonth/stock) != 0 && month.to_i > yearm 
+	elsif (sumday+daysInMonth)%daysInyear != 0 && month.to_i > yearm
 		print("-1\n")
-	elsif month.to_i > yearm 
-		print("-1\n")
-	
-	else 
-		week = (((year.to_i-1)*yearm*daysInMonth)+((month.to_i-1)*daysInMonth)+(leapday*daysInMonth)+day.to_i)%daysInWeek
-
-
-		if week == 0
-			week+=daysInWeek
-		end
-
+	else
 		print (week+64).chr,"\n"
 
 	end
